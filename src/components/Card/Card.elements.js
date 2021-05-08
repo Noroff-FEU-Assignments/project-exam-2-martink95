@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const CardsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+`;
 
 export const CardGrid = styled.div`
     display: flex;
