@@ -7,6 +7,8 @@ import {
     HeadingSpan,
 } from "./Header.elements";
 
+import HeaderSearchItems from "./HeaderSearchItems";
+
 export default function Header() {
     return (
         <HeaderImage>
@@ -15,7 +17,9 @@ export default function Header() {
                     We help you find the best <HeadingSpan>hotels in Bergen.</HeadingSpan>
                 </HeaderHeading>
                 <FormCenter>
-                    <HeaderSearchInput />
+                    <HeaderSearchInput placeholder="Search for hotels" />
+                    <HeaderSearchItems>
+                    </HeaderSearchItems>
                 </FormCenter>
             </HeaderContainer>
 

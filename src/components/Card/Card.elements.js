@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const CardsContainer = styled.div`
+    margin-top: 3rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 `;
 
 export const CardGrid = styled.div`
