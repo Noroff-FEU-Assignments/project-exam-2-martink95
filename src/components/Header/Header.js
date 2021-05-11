@@ -3,6 +3,8 @@ import {
     HeaderContainer,
     HeaderHeading,
     HeaderSearchInput,
+    FormCenter,
+    HeadingSpan,
 } from "./Header.elements";
 
 export default function Header() {
@@ -10,9 +12,11 @@ export default function Header() {
         <HeaderImage>
             <HeaderContainer>
                 <HeaderHeading>
-                    Holidaze heading
+                    We help you find the best <HeadingSpan>hotels in Bergen.</HeadingSpan>
                 </HeaderHeading>
-                <HeaderSearchInput />
+                <FormCenter>
+                    <HeaderSearchInput />
+                </FormCenter>
             </HeaderContainer>
 
         </HeaderImage>

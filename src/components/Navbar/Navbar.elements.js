@@ -106,3 +106,12 @@ export const NavMenuIcon = styled.div`
         cursor: pointer;
     }
 `;
+
+export const LogoSpan = styled.span`
+    font-family: paralucent, lato, sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    color: ${props => props.theme.blue}
+`;

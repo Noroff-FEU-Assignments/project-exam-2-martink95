@@ -9,6 +9,7 @@ import {
     NavLinkButton,
     NavItems,
     NavMenuIcon,
+    LogoSpan,
 } from "./Navbar.elements";
 
 const Navbar = () => {
@@ -18,35 +19,35 @@ const Navbar = () => {
 
     return (
         <>
-        <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
-            <NavbarContainer>
-                <NavLogo to="/">
-                    Holidaze
-                </NavLogo>
-                <NavMenuIcon onClick={handleClick}>
-                    {click ? <FaTimes size={28} /> : <FaBars size={28} />}
-                </NavMenuIcon>
-                <NavItems onClick={handleClick} click={click}>
-                <NavLink to="/">
-                    Home
+            <IconContext.Provider value={{ color: "#fff" }}>
+                <Nav>
+                    <NavbarContainer>
+                        <NavLogo to="/">
+                            Holidaze<LogoSpan>.</LogoSpan>
+                        </NavLogo>
+                        <NavMenuIcon onClick={handleClick}>
+                            {click ? <FaTimes size={28} /> : <FaBars size={28} />}
+                        </NavMenuIcon>
+                        <NavItems onClick={handleClick} click={click}>
+                            <NavLink to="/">
+                                Home
                 </NavLink>
-                <NavLink to="/">
-                    About
+                            <NavLink to="/">
+                                About
                 </NavLink>
-                <NavLink to="/">
-                    Hotels
+                            <NavLink to="/">
+                                Hotels
                 </NavLink>
-                <NavLink to="/">
-                    Contact us
+                            <NavLink to="/">
+                                Contact us
                 </NavLink>
-                <NavLinkButton to="/">
-                    Log in
+                            <NavLinkButton to="/">
+                                Log in
                 </NavLinkButton>
-                </NavItems>          
-            </NavbarContainer>
-        </Nav>
-        </IconContext.Provider>
+                        </NavItems>
+                    </NavbarContainer>
+                </Nav>
+            </IconContext.Provider>
         </>
     )
 }

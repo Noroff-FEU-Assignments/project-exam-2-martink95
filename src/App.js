@@ -8,7 +8,7 @@ import Header from "./components/Header/Header";
 function App() {
   return (
     <Router>
-      <Navbar />
+      <Navbar></Navbar>
       <Header />
       <Button>Book hotel</Button>
       <RedButton>Cancel hotel</RedButton>
