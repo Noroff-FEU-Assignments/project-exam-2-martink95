@@ -35,6 +35,11 @@ export const HeaderSearchInput = styled.input`
     border-radius: 5px;
     width: 400px;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+
+    &:focus {
+        outline: none;
+        border: 2px solid ${props => props.theme.blue};
+    }
 `;
 
 export const FormCenter = styled.div`
@@ -57,18 +62,28 @@ export const HeaderSearchOutput = styled.div`
     width: 415px;
     height: 80px;
     margin: 0.15rem auto;
-    box-shadow: 2px 2px 4px rgba(0,0,0,0.25);
-    cursor: pointer;
+    
     position: relative;
     z-index: 500;
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.55);
+        border: 2px solid ${props => props.theme.blue};
+    }
+
+    &:active {
+        box-shadow: 2px 2px 4px inset rgba(0,0,0,0.55);
+        border: 1px solid ${props => props.theme.blue};
+    }
 `; 
 
 export const HeaderSearchOutputImage = styled.img`
-    height: 80px;
+    height: 100%;
     width: 80px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    object-fit: cover;
 `; 
 
 export const HeaderSearchOutputTextContainer = styled.div`
@@ -76,7 +91,7 @@ export const HeaderSearchOutputTextContainer = styled.div`
     padding-bottom: 5px;
     display: flex;
     flex-direction: column;
-    margin-left: 5px;
+    margin-left: 10px;
 `;
 
 export const HeaderSearchOutputHotelName = styled.p`
@@ -88,6 +103,8 @@ export const HeaderSearchOutputHotelName = styled.p`
 
 export const HeaderSearchOutputDescription = styled.p`
     font-size: 1rem;
+    overflow: hidden;
+    width: 300px; 
     font-family: lato, sans-serif;
     color: ${props => props.theme.gray};
 `;

@@ -8,6 +8,8 @@ export const CardsContainer = styled.div`
     justify-content: center;
 `;
 
+
+
 export const CardGrid = styled.div`
     display: flex;
     flex-direction: column;

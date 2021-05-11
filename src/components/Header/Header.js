@@ -14,7 +14,7 @@ export default function Header() {
         <HeaderImage>
             <HeaderContainer>
                 <HeaderHeading>
-                    We help you find the best <HeadingSpan>hotels in Bergen.</HeadingSpan>
+                    We help you find the best <HeadingSpan>hotels in Bergen</HeadingSpan>
                 </HeaderHeading>
                 <FormCenter>
                     <HeaderSearchInput placeholder="Search for hotels" />
