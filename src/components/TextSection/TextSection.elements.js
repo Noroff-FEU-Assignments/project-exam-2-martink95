@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TextSectionWrapper = styled.div`
     width: 1500px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
 
     @media screen and (max-width: 960px) {

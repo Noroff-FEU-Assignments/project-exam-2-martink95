@@ -7,7 +7,7 @@ import {
 
 } from "./TextSection.elements"
 
-import { FlexRowCentered } from "../shared/Flex/Flex.elements";
+import  {FlexCentered}  from "../shared/Flex/Flex.elements";
 
 import img from "../../images/Header.jpg"
 
@@ -15,7 +15,7 @@ import img from "../../images/Header.jpg"
 export default function TextSection() {
     return (
         <>
-            <FlexRowCentered>
+            <FlexCentered>
                 <TextSectionWrapper>
                 <TextSectionContainer>
                     <TextSectionHeading>Why Bergen?</TextSectionHeading>
@@ -41,7 +41,7 @@ export default function TextSection() {
                 </TextSectionContainer>
                 <TextSectionImage src={img}/>
                 </TextSectionWrapper>
-            </FlexRowCentered>
+            </FlexCentered>
         </>
     );
 }
