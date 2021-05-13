@@ -1,9 +1,24 @@
 import styled from "styled-components";
 
+export const TextSectionWrapper = styled.div`
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 960px) {
+        margin: auto;
+        width: 400px;
+    }
+`;
+
 export const TextSectionContainer = styled.div`
-    margin-top: 150px;
-    width: 600px;
-    margin-right: 100px;
+    margin: 150px auto 0 auto;
+    width: 500px;
+    @media screen and (max-width: 960px) {
+        margin-top: 50px;
+        width: 400px;
+    }
 `;
 
 export const TextSectionHeading = styled.h2`
@@ -19,13 +34,21 @@ export const TextSectionParagraph = styled.p`
     width: 100%;
     font-size: 1rem;
     color: ${props => props.theme.gray};
+    overflow: hidden;
+
 `;
 
 export const TextSectionImage = styled.img`
-    margin-top: 100px;
+    margin: 100px auto 0 auto;
     height: 300px;
     width: 500px;
     background-position: center;
     background-repeat: no-repeat;
     object-fit: cover;
+
+    @media screen and (max-width: 960px) {
+        height: 250px;
+        width: 400px;
+        margin-top: 50px;
+    }
 `;

@@ -12,7 +12,7 @@ import {
 import {CardButton} from "../shared/Button/Button.elements"
 
 
-export default function Card() {
+export default function FeaturedCards() {
     return (
         <CardsContainer>
             <CardWrapper>
@@ -24,7 +24,7 @@ export default function Card() {
                     <CardDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi</CardDescription>
-                    <CardPrice>799 NOK</CardPrice>
+                    <CardPrice>599 NOK</CardPrice>
                     <CardButton>Book Hotel</CardButton>
                 </CardContent>
                 </CardGrid>
@@ -58,7 +58,7 @@ export default function Card() {
                     <CardDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi</CardDescription>
-                    <CardPrice>799 NOK</CardPrice>
+                    <CardPrice>999 NOK</CardPrice>
                     <CardButton>Book Hotel</CardButton>
                 </CardContent>
                 </CardGrid>

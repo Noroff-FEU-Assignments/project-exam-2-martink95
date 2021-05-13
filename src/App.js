@@ -1,18 +1,28 @@
 import './App.css';
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Card from "./components/Card/Card";
 import Navbar from "./components/Navbar/Navbar";
-import Header from "./components/Header/Header";
-import TextSection from "./components/TextSection/TextSection"
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Hotels from "./pages/Hotels";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <Router>
-      <Navbar></Navbar>
-      <Header />
-      <Card />
-      <TextSection />
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path ="/hotels" exact component={Hotels} />
+        <Route path="/contact" exact component={Contact} />
+        <Route path="/login" exact component={Login} />
+      </Switch>
+      <Footer />
     </Router>
+    
   );
 }
 

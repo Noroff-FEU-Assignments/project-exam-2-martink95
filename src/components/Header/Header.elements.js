@@ -25,6 +25,23 @@ export const HeaderHeading = styled.h1`
     color: #fff;
     margin-top: 200px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.25);
+
+    @media screen and (max-width: 960px) {
+        font-size: 2rem;
+        width: 300px;
+    }
+
+`;
+
+export const HeadingSpan = styled.span`
+    font-size: 3rem;
+    font-family: paralucent, lato, sans-serif;
+    font-weight: 700;
+    color: ${props => props.theme.blue};
+
+    @media screen and (max-width: 960px) {
+        font-size: 2rem;
+    }
 `;
 
 export const HeaderSearchInput = styled.input`
@@ -45,13 +62,6 @@ export const HeaderSearchInput = styled.input`
 export const FormCenter = styled.div`
     width: 100%;
     margin: 0 auto;
-`;
-
-export const HeadingSpan = styled.span`
-    font-size: 3rem;
-    font-family: paralucent, lato, sans-serif;
-    font-weight: 700;
-    color: ${props => props.theme.blue};
 `;
 
 export const HeaderSearchOutput = styled.div`

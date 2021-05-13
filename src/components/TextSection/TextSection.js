@@ -1,4 +1,5 @@
 import {
+    TextSectionWrapper,
     TextSectionContainer,
     TextSectionHeading,
     TextSectionParagraph,
@@ -15,21 +16,31 @@ export default function TextSection() {
     return (
         <>
             <FlexRowCentered>
+                <TextSectionWrapper>
                 <TextSectionContainer>
-                    <TextSectionHeading>Some Heading</TextSectionHeading>
+                    <TextSectionHeading>Why Bergen?</TextSectionHeading>
                     <TextSectionParagraph>
-                        Some paragraph with some containing text to describe what the site is about maybe?
-                        or some more text to describe something else, maybe why they should use the website?
+                    Section paragraph with some long text.
+                    This section is a small information part for the
+                    visitor to read.
+
+                    Section paragraph with some long text.
+                    This section is a small information part for the
+                    visitor to read.
                     </TextSectionParagraph>
 
                     <TextSectionParagraph>
-                        Some paragraph with some containing text to describe what the site is about maybe?
-                        or some more text to describe something else, maybe why they should use the website?
-                        Or even maybe some longer text than the text before just to check how it works.
-                    </TextSectionParagraph>
+                    Section paragraph with some long text.
+                    This section is a small information part for the
+                    visitor to read.
 
+                    Section paragraph with some long text.
+                    This section is a small information part for the
+                    visitor to read.
+                    </TextSectionParagraph>
                 </TextSectionContainer>
                 <TextSectionImage src={img}/>
+                </TextSectionWrapper>
             </FlexRowCentered>
         </>
     );

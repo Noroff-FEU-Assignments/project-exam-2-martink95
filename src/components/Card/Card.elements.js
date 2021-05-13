@@ -31,13 +31,14 @@ export const CardWrapper = styled.div`
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.10);
     width: 400px;
     padding: 0 0 20px 0;
-    
     &:hover {
         box-shadow: 3px 3px 6px rgba(0,0,0,0.15)
     }
+
 `;
 
 export const CardHeading = styled.h2`
+    width: 350px;
     font-size: 1.5rem;
     font-family: paralucent, lato, sans-serif;
     font-weight: 700;
@@ -45,6 +46,8 @@ export const CardHeading = styled.h2`
 `;
 
 export const CardAddress = styled.p`
+    width: 350px;
+    overflow: hidden;
     font-size: 1rem;
     color: ${props => props.theme.gray};
     margin-bottom: 1.25rem;
@@ -54,11 +57,13 @@ export const CardDescription = styled.p`
     margin-bottom: 1.5rem;
     font-size: 1rem;
     width: 350px;
+    overflow: hidden;
     height: 100px;
     color: ${props => props.theme.gray};
 `;
 
 export const CardPrice = styled.p`
+    width: 100px;
     font-size: 1.25rem;
     margin-bottom: 1rem;
     color: ${props => props.theme.blue}
