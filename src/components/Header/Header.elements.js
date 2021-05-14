@@ -18,7 +18,7 @@ export const HeaderContainer = styled.div`
 
 export const HeaderHeading = styled.h1`
     width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 15px auto;
     font-size: 3rem;
     font-family: paralucent, lato, sans-serif;
     font-weight: 700;

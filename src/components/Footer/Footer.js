@@ -18,9 +18,9 @@ export default function Footer() {
                     </FooterLogo>
                     <FooterNavContainer>
                         <FooterNavLink to="/">Home</FooterNavLink>
-                        <FooterNavLink to="/">About</FooterNavLink>
-                        <FooterNavLink to="/">Hotels</FooterNavLink>
-                        <FooterNavLink to="/">Contact us</FooterNavLink>
+                        <FooterNavLink to="/about">About</FooterNavLink>
+                        <FooterNavLink to="/hotels">Hotels</FooterNavLink>
+                        <FooterNavLink to="/contact">Contact us</FooterNavLink>
                     </FooterNavContainer>
                     <FooterInfo>
                         5005 Bergen, Norway. <br/>
