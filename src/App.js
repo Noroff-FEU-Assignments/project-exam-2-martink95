@@ -7,7 +7,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Hotels from "./pages/Hotels";
 import Contact from "./pages/Contact/Contact";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (

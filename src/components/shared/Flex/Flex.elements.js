@@ -5,7 +5,6 @@ export const FlexCentered = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
 `;
 
 export const FlexCenteredColumn = styled.div`
