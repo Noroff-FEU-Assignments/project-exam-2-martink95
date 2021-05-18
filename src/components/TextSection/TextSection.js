@@ -14,7 +14,7 @@ export default function TextSection({ heading, paragraph, img }) {
     let paragraphItems = [];
     if(Array.isArray(paragraph)) {
         for(let i=0; i < paragraph.length; i++) {
-            paragraphItems.push(<TextSectionParagraph>{paragraph[i]}</TextSectionParagraph>)
+            paragraphItems.push(<TextSectionParagraph key={paragraph+i}>{paragraph[i]}</TextSectionParagraph>)
         }
     } else {
         paragraphItems = <TextSectionParagraph>{paragraph}</TextSectionParagraph>;

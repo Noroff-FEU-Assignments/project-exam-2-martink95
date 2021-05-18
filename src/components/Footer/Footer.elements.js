@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.footer`
     margin-top: 125px;
     width: 100%;
     padding-bottom: 50px;
+    margin-bottom: 0;
     background-color: ${props => props.theme.purple};
     display: flex;
     justify-content: center;

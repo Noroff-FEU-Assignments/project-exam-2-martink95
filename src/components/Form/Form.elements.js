@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
     margin-top: 150px;
     display: flex;
     flex-direction: column;
@@ -71,5 +71,5 @@ export const LoginFormLogo = styled.h1`
 export const LoginFormLogoSpan = styled.span`
     font-size: 3rem;
     font-weight: 700;
-    color: ${props => props.theme.blue}
+    color: ${props => props.theme.blue};
 `;

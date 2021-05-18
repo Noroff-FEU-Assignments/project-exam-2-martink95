@@ -21,6 +21,7 @@ export default function FeaturedCards() {
 }
 
 const generateCards = () => {
+
     for(let i = 0; i < 3; i++) {
         return (
             <FlexCentered>
