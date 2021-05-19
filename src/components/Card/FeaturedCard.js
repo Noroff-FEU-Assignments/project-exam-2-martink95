@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import {API_URL} from "../../constants/api";
+
 import {
     CardGrid,
     CardContent,
@@ -11,71 +15,90 @@ import {
     CardsContainerGrid
 } from "./Card.elements";
 import {FlexCentered} from "../shared/Flex/Flex.elements"
-import {CardButton} from "../shared/Button/Button.elements"
+import {LinkButton, CardButton} from "../shared/Button/Button.elements"
+
+
 
 
 export default function FeaturedCards() {
-    return (
-      generateCards()  
-    );
+    const [hotels, setHotels] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        axios.get(`${API_URL}/hotels`)
+        .then(res => {
+            setHotels(res.data);
+            setLoading(false);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }, []);
+    console.log(hotels)
+    if(!loading) {
+        return (
+            generateCards(hotels)  
+          );
+    } else  {
+        return <div>Loading..</div>
+    }
+    
 }
 
-const generateCards = () => {
-
-    for(let i = 0; i < 3; i++) {
+const generateCards = (hotels) =>  {
         return (
             <FlexCentered>
                 <CardsContainer>
                     <CardsContainerGrid>
-                        
-                        <CardWrapper>
-                            <CardGrid>
-                            <CardImage alt="Some image" src="https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
-                            <CardContent>
-                                <CardHeading>Hotel Norge by Scandic</CardHeading>
-                                <CardAddress>Nedre Ole Bulls plass 4, 5012 Bergen</CardAddress>
-                                <CardDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi</CardDescription>
-                                <CardPrice>599 NOK</CardPrice>
-                                <CardButton>Book Hotel</CardButton>
-                            </CardContent>
-                            </CardGrid>
-                        </CardWrapper>
-                    
-                        <CardWrapper>
-                            <CardGrid>
-                            <CardImage alt="Some image" src="https://images.pexels.com/photos/26139/pexels-photo-26139.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
-                            <CardContent>
-                                <CardHeading>Hotel Norge by Scandic</CardHeading>
-                                <CardAddress>Nedre Ole Bulls plass 4, 5012 Bergen</CardAddress>
-                                <CardDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi</CardDescription>
-                                <CardPrice>799 NOK</CardPrice>
-                                <CardButton>Book Hotel</CardButton>
-                            </CardContent>
-                            </CardGrid>
-                        </CardWrapper>
-
-                        <CardWrapper>
-                            <CardGrid>
-                            <CardImage alt="Some image" src="https://images.pexels.com/photos/5998132/pexels-photo-5998132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
-                            <CardContent>
-                                <CardHeading>Hotel Norge by Scandic</CardHeading>
-                                <CardAddress>Nedre Ole Bulls plass 4, 5012 Bergen</CardAddress>
-                                <CardDescription>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi</CardDescription>
-                                <CardPrice>999 NOK</CardPrice>
-                                <CardButton>Book Hotel</CardButton>
-                            </CardContent>
-                            </CardGrid>
-                        </CardWrapper>
-                        
+                        {generateHotelCards(hotels)}
                     </CardsContainerGrid>
                 </CardsContainer>
             </FlexCentered>
         );
-    }
+    
 }
+
+
+const generateHotelCards = (hotels) => {
+    return (
+        <>
+        <CardWrapper>
+                <CardGrid>
+                    <CardImage alt="Some image" src={hotels[0].hotel_images[0].name}/>
+                    <CardContent>
+                        <CardHeading>{hotels[0].hotel_name}</CardHeading>
+                        <CardAddress>{hotels[0].hotel_address}</CardAddress>
+                        <CardDescription>{hotels[0].hotel_description}</CardDescription>
+                        <CardPrice>{hotels[0].hotel_price} $</CardPrice>
+                        <LinkButton to={`/hotel/${hotels[0].id}`}>Book Hotel</LinkButton>
+                    </CardContent>
+                </CardGrid>
+            </CardWrapper>
+            <CardWrapper>
+                <CardGrid>
+                    <CardImage alt="Some image" src={hotels[1].hotel_images[0].name}/>
+                    <CardContent>
+                        <CardHeading>{hotels[1].hotel_name}</CardHeading>
+                        <CardAddress>{hotels[1].hotel_address}</CardAddress>
+                        <CardDescription>{hotels[1].hotel_description}</CardDescription>
+                        <CardPrice>{hotels[1].hotel_price} $</CardPrice>
+                        <LinkButton to={`/hotel/${hotels[1].id}`}>Book Hotel</LinkButton>
+                    </CardContent>
+                </CardGrid>
+            </CardWrapper>
+
+            <CardWrapper>
+            <CardGrid>
+                <CardImage alt="Some image" src={hotels[2].hotel_images[0].name}/>
+                <CardContent>
+                    <CardHeading>{hotels[2].hotel_name}</CardHeading>
+                    <CardAddress>{hotels[2].hotel_address}</CardAddress>
+                    <CardDescription>{hotels[2].hotel_description}</CardDescription>
+                    <CardPrice>{hotels[2].hotel_price} $</CardPrice>
+                    <LinkButton to={`/hotel/${hotels[2].id}`}>Book Hotel</LinkButton>
+                </CardContent>
+            </CardGrid>
+            </CardWrapper>
+        </>
+    );
+};

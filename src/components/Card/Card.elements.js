@@ -78,6 +78,6 @@ export const CardDescription = styled.p`
 export const CardPrice = styled.p`
     width: 100px;
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: ${props => props.theme.blue}
 `;
