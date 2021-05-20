@@ -3,7 +3,7 @@ import FeaturedCard from "../../components/Card/FeaturedCard";
 import { aboutInfoObj } from "./data";
 
 
-export default function Home() {
+export default function About() {
     return (
     <>
         <TextSection {...aboutInfoObj} />

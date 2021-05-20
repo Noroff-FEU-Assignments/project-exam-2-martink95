@@ -8,6 +8,8 @@ import About from "./pages/About/About";
 import Hotels from "./pages/Hotels/Hotels";
 import Contact from "./pages/Contact/Contact";
 import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Messages from "./pages/Dashboard/Messages"
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path ="/hotels" exact component={Hotels} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/login" exact component={Login} />
+        <Route path="/dashboard" exact component={Dashboard} />
+        <Route path="/dashboard/messages" exact component={Messages} />
       </Switch>
       <Footer />
     </Router>

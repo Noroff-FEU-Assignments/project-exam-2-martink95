@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../constants/api";
 import axios from "axios";
@@ -19,6 +20,12 @@ export default function LoginForm() {
     const onSubmit = async data => {
         await login(data.email, data.password);
     }
+
+    const history = useHistory();
+    if(localStorage.getItem("holidaze_data")) {
+        history.push("/dashboard")
+    }
+    
     
 
     return (
@@ -70,11 +77,15 @@ const login = async (email, password) => {
         let holidazeData = {
             token: res.data.jwt,
             user_id: res.data.user.id,
-            user_email: res.data.user.email
+            user_email: res.data.user.email,
+            user_type: res.data.user.role.type
         }
         if(res.data) {
             console.log("successful login")
             localStorage.setItem("holidaze_data", JSON.stringify(holidazeData));
         }
     });
+
 }
+
+

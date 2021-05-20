@@ -15,7 +15,7 @@ import {
     CardsContainerGrid
 } from "./Card.elements";
 import {FlexCentered} from "../shared/Flex/Flex.elements"
-import {LinkButton, CardButton} from "../shared/Button/Button.elements"
+import {LinkButton} from "../shared/Button/Button.elements"
 
 
 
@@ -60,42 +60,56 @@ const generateCards = (hotels) =>  {
 
 
 const generateHotelCards = (hotels) => {
+    let hotelOne = Math.floor(Math.random() * hotels.length);
+    let hotelTwo = Math.floor(Math.random() * hotels.length);
+    let hotelThree = Math.floor(Math.random() * hotels.length);
+    
+    while(hotelOne === hotelTwo) {
+        hotelTwo = Math.floor(Math.random() * hotels.length)
+    }
+    while(hotelThree === hotelTwo || hotelThree === hotelOne) {
+        hotelThree = Math.floor(Math.random() * hotels.length)
+    }
+    console.log(hotelOne);
+    console.log(hotelTwo);
+    console.log(hotelThree);
+
     return (
         <>
         <CardWrapper>
                 <CardGrid>
-                    <CardImage alt="Some image" src={hotels[0].hotel_images[0].name}/>
+                    <CardImage alt="Some image" src={hotels[hotelOne].hotel_images[0].name}/>
                     <CardContent>
-                        <CardHeading>{hotels[0].hotel_name}</CardHeading>
-                        <CardAddress>{hotels[0].hotel_address}</CardAddress>
-                        <CardDescription>{hotels[0].hotel_description}</CardDescription>
-                        <CardPrice>{hotels[0].hotel_price} $</CardPrice>
-                        <LinkButton to={`/hotel/${hotels[0].id}`}>Book Hotel</LinkButton>
+                        <CardHeading>{hotels[hotelOne].hotel_name}</CardHeading>
+                        <CardAddress>{hotels[hotelOne].hotel_address}</CardAddress>
+                        <CardDescription>{hotels[hotelOne].hotel_description}</CardDescription>
+                        <CardPrice>{hotels[hotelOne].hotel_price} $</CardPrice>
+                        <LinkButton to={`/hotel/${hotels[hotelOne].id}`}>Book Hotel</LinkButton>
                     </CardContent>
                 </CardGrid>
             </CardWrapper>
             <CardWrapper>
                 <CardGrid>
-                    <CardImage alt="Some image" src={hotels[1].hotel_images[0].name}/>
+                    <CardImage alt="Some image" src={hotels[hotelTwo].hotel_images[0].name}/>
                     <CardContent>
-                        <CardHeading>{hotels[1].hotel_name}</CardHeading>
-                        <CardAddress>{hotels[1].hotel_address}</CardAddress>
-                        <CardDescription>{hotels[1].hotel_description}</CardDescription>
-                        <CardPrice>{hotels[1].hotel_price} $</CardPrice>
-                        <LinkButton to={`/hotel/${hotels[1].id}`}>Book Hotel</LinkButton>
+                        <CardHeading>{hotels[hotelTwo].hotel_name}</CardHeading>
+                        <CardAddress>{hotels[hotelTwo].hotel_address}</CardAddress>
+                        <CardDescription>{hotels[hotelTwo].hotel_description}</CardDescription>
+                        <CardPrice>{hotels[hotelTwo].hotel_price} $</CardPrice>
+                        <LinkButton to={`/hotel/${hotels[hotelTwo].id}`}>Book Hotel</LinkButton>
                     </CardContent>
                 </CardGrid>
             </CardWrapper>
 
             <CardWrapper>
             <CardGrid>
-                <CardImage alt="Some image" src={hotels[2].hotel_images[0].name}/>
+                <CardImage alt="Some image" src={hotels[hotelThree].hotel_images[0].name}/>
                 <CardContent>
-                    <CardHeading>{hotels[2].hotel_name}</CardHeading>
-                    <CardAddress>{hotels[2].hotel_address}</CardAddress>
-                    <CardDescription>{hotels[2].hotel_description}</CardDescription>
-                    <CardPrice>{hotels[2].hotel_price} $</CardPrice>
-                    <LinkButton to={`/hotel/${hotels[2].id}`}>Book Hotel</LinkButton>
+                    <CardHeading>{hotels[hotelThree].hotel_name}</CardHeading>
+                    <CardAddress>{hotels[hotelThree].hotel_address}</CardAddress>
+                    <CardDescription>{hotels[hotelThree].hotel_description}</CardDescription>
+                    <CardPrice>{hotels[hotelThree].hotel_price} $</CardPrice>
+                    <LinkButton to={`/hotel/${hotels[hotelThree].id}`}>Book Hotel</LinkButton>
                 </CardContent>
             </CardGrid>
             </CardWrapper>

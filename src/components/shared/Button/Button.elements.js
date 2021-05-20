@@ -7,7 +7,8 @@ export const Button = styled.button`
 background-color: ${props => props.theme.blue};
 color: #fff;
 padding: 15px 25px;
-font-size: 16px;
+font-size: 1rem;
+font-family: lato, 'sans-serif';
 outline: none;
 cursor: pointer;
 border: none;
@@ -24,6 +25,12 @@ export const RedButton = styled(Button)`
     background-color: ${props => props.theme.red};
 `;
 
+export const SignOutDashboardButton = styled(Button)`
+    background-color: ${props => props.theme.red};
+    float: right;
+    margin-right: 150px;
+`;
+
 export const PurpleButton = styled(Button)`
     background-color: ${props => props.theme.purple};
 `;
@@ -37,8 +44,9 @@ export const LinkButton = styled(Link)`
     text-decoration: none;
     border-radius: 0px;
     color: #fff;
-    padding: 10px 25px;
-    font-size: 16px;
+    padding: 15px 25px;
+    font-family: lato, 'sans-serif';
+    font-size: 1rem;
     outline: none;
     cursor: pointer;
     border: none;
