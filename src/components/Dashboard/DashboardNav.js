@@ -15,8 +15,13 @@ export default function DashboardNav() {
                     <DashboardNavLink to="/dashboard" activeStyle={{ color: "#049f34" }}>Bookings</DashboardNavLink>
                     <DashboardNavLink to="/dashboard/messages">Messages</DashboardNavLink>
                 </DashboardNavLinkContainer>
-                <SignOutDashboardButton>Sign out</SignOutDashboardButton>
+                <SignOutDashboardButton onClick={logOut}>Sign out</SignOutDashboardButton>
             </DashboardNavContainer>
         </>
     );
+}
+
+const logOut = () => {
+    localStorage.removeItem("holidaze_data");
+    window.location.replace("/login")
 }

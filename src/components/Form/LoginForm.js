@@ -1,4 +1,3 @@
-import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { API_URL } from "../../constants/api";
 import axios from "axios";
@@ -21,9 +20,8 @@ export default function LoginForm() {
         await login(data.email, data.password);
     }
 
-    const history = useHistory();
     if(localStorage.getItem("holidaze_data")) {
-        history.push("/dashboard")
+        window.location.replace("/dashboard");
     }
     
     
@@ -83,6 +81,9 @@ const login = async (email, password) => {
         if(res.data) {
             console.log("successful login")
             localStorage.setItem("holidaze_data", JSON.stringify(holidazeData));
+            if(localStorage.getItem("holidaze_data")) {
+                window.location.replace("/dashboard");
+            }
         }
     });
 

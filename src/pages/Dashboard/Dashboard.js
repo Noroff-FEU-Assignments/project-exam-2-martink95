@@ -15,9 +15,14 @@ const getUserType = () => {
     const userType = userInfo.user_type;
     console.log(userType);
 
-    if(userType === "admin") {
-        return <Admin />;
+    if(userInfo) {
+        if(userType === "admin") {
+            return <Admin />;
+        } else {
+            return <Profile />;
+        }
     } else {
-        return <Profile />;
+        window.location.href("/");
     }
+ 
 }

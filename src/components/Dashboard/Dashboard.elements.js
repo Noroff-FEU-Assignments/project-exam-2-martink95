@@ -52,10 +52,10 @@ export const DashboardContainer = styled.div`
 
 export const DashboardContainerGrid = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: row;
     margin-top: 10px;
-    border: 1px solid ${props => props.theme.gray};
+    border-bottom: 1px solid ${props => props.theme.gray};
 `;
 
 export const DashboardBookingInfo = styled.p`
