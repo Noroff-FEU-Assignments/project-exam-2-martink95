@@ -38,7 +38,11 @@ export default function HotelCards() {
             generateHotelCards(hotels)
         );
     } else {
-        return <p>Loading...</p>
+        return (
+            <FlexCentered>
+                <p>Loading...</p>
+            </FlexCentered> 
+        );
     }
 
 }

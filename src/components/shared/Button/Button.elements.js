@@ -22,6 +22,10 @@ transition: transform .2s ease;
 `;
 
 export const RedButton = styled(Button)`
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 50px;
     background-color: ${props => props.theme.red};
 `;
 
@@ -29,6 +33,10 @@ export const SignOutDashboardButton = styled(Button)`
     background-color: ${props => props.theme.red};
     float: right;
     margin-right: 150px;
+
+    @media screen and (max-width: 720px) {
+        margin-right: 10px;
+    }
 `;
 
 export const PurpleButton = styled(Button)`

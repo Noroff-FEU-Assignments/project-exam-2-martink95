@@ -41,13 +41,19 @@ export const DashboardNavLink = styled(Link)`
 
 export const DashboardContainer = styled.div`
     margin-top: 10px;
+    box-sizing: border-box;
     clear: both;
-    width: 75%;
+    width: 100%;
     padding-right: 150px;
     padding-left: 150px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    @media screen and (max-width: 960px) {
+        padding: 0;
+        margin: 0 auto;
+        width: 165px;
+    }
 `;
 
 export const DashboardContainerGrid = styled.div`
@@ -56,10 +62,17 @@ export const DashboardContainerGrid = styled.div`
     flex-direction: row;
     margin-top: 10px;
     border-bottom: 1px solid ${props => props.theme.gray};
+
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+    }
 `;
 
 export const DashboardBookingInfo = styled.p`
-    padding: 15px 15px;
+    padding: 15px 5px;
+    width: 150px;
+    overflow: hidden;
+    overflow-wrap: break-word;
     font-size: 1rem;
     color: ${props => props.theme.gray};
     font-family: lato, 'sans-serif';

@@ -34,13 +34,17 @@ export default function FeaturedCards() {
             console.log(err);
         })
     }, []);
-    console.log(hotels)
     if(!loading) {
         return (
             generateCards(hotels)  
           );
     } else  {
-        return <div>Loading..</div>
+        return (
+            <FlexCentered>
+                <div>Loading..</div>
+            </FlexCentered>
+            
+        );
     }
     
 }
@@ -70,9 +74,6 @@ const generateHotelCards = (hotels) => {
     while(hotelThree === hotelTwo || hotelThree === hotelOne) {
         hotelThree = Math.floor(Math.random() * hotels.length)
     }
-    console.log(hotelOne);
-    console.log(hotelTwo);
-    console.log(hotelThree);
 
     return (
         <>

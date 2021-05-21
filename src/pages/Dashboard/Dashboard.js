@@ -12,17 +12,17 @@ export default function Dashboard() {
 
 const getUserType = () => {
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
-    const userType = userInfo.user_type;
-    console.log(userType);
-
+    let userType = ""
     if(userInfo) {
+        userType = userInfo.user_type;
+        console.log(userType);
         if(userType === "admin") {
             return <Admin />;
         } else {
             return <Profile />;
         }
     } else {
-        window.location.href("/");
+        window.location.replace("/login");
     }
  
 }

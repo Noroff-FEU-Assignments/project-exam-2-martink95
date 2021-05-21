@@ -35,9 +35,17 @@ export default function BookingSection() {
     }, []);
 
     if(!loading) {
-        return generateBookings(bookings);
+        return (
+            <div className="booking-container">
+                {generateBookings(bookings)}
+            </div>
+        );
     } else {
-        return <p>Could not retrieve information, try again.</p>
+        return (
+            <DashboardContainer>
+                <p>Loading..</p>
+            </DashboardContainer>
+        );
     }
 /*
     return(
@@ -93,7 +101,9 @@ const generateBookings = (bookings) => {
                 <DashboardBookingInfo><span style={{color: "#2574FF" }}>Date:</span> {formatDate(booking.created_at)}</DashboardBookingInfo>
                 <DashboardBookingInfo><span style={{color: "#2574FF" }}>E-mail:</span> {booking.user.email}</DashboardBookingInfo>
                 <DashboardBookingInfo><span style={{color: "#2574FF" }}>Booking id:</span> {booking.id}</DashboardBookingInfo>
+                <DashboardBookingInfo>
                 <RedButton data-id={booking.id} onClick={(e) => cancelBooking(e)}>Cancel</RedButton>
+                </DashboardBookingInfo>
             </DashboardContainerGrid>
         );
     

@@ -27,7 +27,7 @@ export default function LoginForm() {
     
 
     return (
-        <>
+        <div className="container">
         <FlexCentered>      
                 <FormContainer onSubmit={handleSubmit(onSubmit)}>
                         <LoginFormLogoContainer>
@@ -55,7 +55,7 @@ export default function LoginForm() {
                         </LoginButtonContainer>
                 </FormContainer>
         </FlexCentered>
-        </>
+        </div>
 
     );
 }
