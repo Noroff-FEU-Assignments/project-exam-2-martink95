@@ -7,7 +7,7 @@ export const FormContainer = styled.form`
     justify-content: center;
 `;
 
-export const ContactFormContainer = styled.div`
+export const ContactFormContainer = styled.form`
     margin-top: 150px;
     margin-right: 175px;
     display: flex;

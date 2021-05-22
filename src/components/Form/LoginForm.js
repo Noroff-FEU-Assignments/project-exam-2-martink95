@@ -15,7 +15,7 @@ import { Button, PurpleButton } from "../shared/Button/Button.elements";
 import { FlexCentered } from "../shared/Flex/Flex.elements"
 
 export default function LoginForm() {
-    const { register, handleSubmit, formState: {errors}} = useForm()
+    const { register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = async data => {
         await login(data.email, data.password);
     }
@@ -66,6 +66,7 @@ const login = async (email, password) => {
         identifier: email,
         password: password
     }
+
     const headers = {
         "Content-Type": "application/json"
     }

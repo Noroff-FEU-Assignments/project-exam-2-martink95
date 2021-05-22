@@ -42,13 +42,13 @@ const Navbar = () => {
                             <NavLink to="/">
                                 Home
                 </NavLink>
-                            <NavLink to="/About">
+                            <NavLink to="/about">
                                 About
                 </NavLink>
-                            <NavLink to="/Hotels">
+                            <NavLink to="/hotels">
                                 Hotels
                 </NavLink>
-                            <NavLink to="/Contact">
+                            <NavLink to="/contact">
                                 Contact us
                 </NavLink>
                             {isLoggedIn(loginStatus)}

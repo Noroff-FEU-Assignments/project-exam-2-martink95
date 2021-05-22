@@ -36,7 +36,7 @@ export default function BookingSection() {
 
     if(!loading) {
         return (
-            <div className="booking-container">
+            <div className="dashboard-container">
                 {generateBookings(bookings)}
             </div>
         );
@@ -47,47 +47,6 @@ export default function BookingSection() {
             </DashboardContainer>
         );
     }
-/*
-    return(
-        <>
-        <DashboardContainer>
-                <DashboardContainerGrid>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Hotel name:</span> Cityblox something</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Address:</span> 5005, Bergen</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Date:</span> 2021-05-18</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>E-mail:</span> usertest@holidaze.com</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Booking id:</span> 2</DashboardBookingInfo>
-                    <RedButton>Cancel</RedButton>
-                </DashboardContainerGrid>
-                <DashboardContainerGrid>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Hotel name:</span> Cityblox something</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Address:</span> 5005, Bergen</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Date:</span> 2021-05-18</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>E-mail:</span> usertest@holidaze.com</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Booking id:</span> 2</DashboardBookingInfo>
-                    <RedButton>Cancel</RedButton>
-                </DashboardContainerGrid>
-                <DashboardContainerGrid>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Hotel name:</span> Cityblox something</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Address:</span> 5005, Bergen</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Date:</span> 2021-05-18</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>E-mail:</span> usertest@holidaze.com</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Booking id:</span> 2</DashboardBookingInfo>
-                    <RedButton>Cancel</RedButton>
-                </DashboardContainerGrid>
-                <DashboardContainerGrid>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Hotel name:</span> Cityblox something</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Address:</span> 5005, Bergen</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Date:</span> 2021-05-18</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>E-mail:</span> usertest@holidaze.com</DashboardBookingInfo>
-                    <DashboardBookingInfo><span style={{color: "#2574FF" }}>Booking id:</span> 2</DashboardBookingInfo>
-                    <RedButton>Cancel</RedButton>
-                </DashboardContainerGrid>
-            </DashboardContainer>
-        </>
-
-    );
-    */
 }
 
 

@@ -52,6 +52,10 @@ export const LinkButton = styled(Link)`
     text-decoration: none;
     border-radius: 0px;
     color: #fff;
+    box-sizing: border-box;
+    margin-top: 12.5px;
+    width: 125px;
+    height: 50px;
     padding: 15px 25px;
     font-family: lato, 'sans-serif';
     font-size: 1rem;

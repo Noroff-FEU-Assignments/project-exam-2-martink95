@@ -85,7 +85,7 @@ const generateHotelCards = (hotels) => {
                         <CardAddress>{hotels[hotelOne].hotel_address}</CardAddress>
                         <CardDescription>{hotels[hotelOne].hotel_description}</CardDescription>
                         <CardPrice>{hotels[hotelOne].hotel_price} $</CardPrice>
-                        <LinkButton to={`/hotel/${hotels[hotelOne].id}`}>Book Hotel</LinkButton>
+                        <LinkButton to={`/hotels/details?id=${hotels[hotelOne].id}`}>Book Hotel</LinkButton>
                     </CardContent>
                 </CardGrid>
             </CardWrapper>
@@ -97,7 +97,7 @@ const generateHotelCards = (hotels) => {
                         <CardAddress>{hotels[hotelTwo].hotel_address}</CardAddress>
                         <CardDescription>{hotels[hotelTwo].hotel_description}</CardDescription>
                         <CardPrice>{hotels[hotelTwo].hotel_price} $</CardPrice>
-                        <LinkButton to={`/hotel/${hotels[hotelTwo].id}`}>Book Hotel</LinkButton>
+                        <LinkButton to={`/hotels/details?id=${hotels[hotelTwo].id}`}>Book Hotel</LinkButton>
                     </CardContent>
                 </CardGrid>
             </CardWrapper>
@@ -110,7 +110,7 @@ const generateHotelCards = (hotels) => {
                     <CardAddress>{hotels[hotelThree].hotel_address}</CardAddress>
                     <CardDescription>{hotels[hotelThree].hotel_description}</CardDescription>
                     <CardPrice>{hotels[hotelThree].hotel_price} $</CardPrice>
-                    <LinkButton to={`/hotel/${hotels[hotelThree].id}`}>Book Hotel</LinkButton>
+                    <LinkButton to={`/hotels/details?id=${hotels[hotelThree].id}`}>Book Hotel</LinkButton>
                 </CardContent>
             </CardGrid>
             </CardWrapper>

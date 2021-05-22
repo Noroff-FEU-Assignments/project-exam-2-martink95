@@ -58,7 +58,7 @@ const generateHotelCards = (hotels) => {
                     <CardAddress>{hotel.hotel_address}</CardAddress>
                     <CardDescription>{hotel.hotel_description}</CardDescription>
                     <CardPrice>{hotel.hotel_price} $</CardPrice>
-                    <LinkButton to={`/hotel/${hotel.id}`}>Book Hotel</LinkButton>
+                    <LinkButton to={`/hotels/details?id=${hotel.id}`}>Book Hotel</LinkButton>
                 </CardContent>
                 </CardGrid>
             </CardWrapper>

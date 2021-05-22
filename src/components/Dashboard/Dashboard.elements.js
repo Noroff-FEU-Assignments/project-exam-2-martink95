@@ -77,3 +77,39 @@ export const DashboardBookingInfo = styled.p`
     color: ${props => props.theme.gray};
     font-family: lato, 'sans-serif';
 `;
+
+export const MessageContainerGrid = styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-top: 10px;
+    border-bottom: 1px solid ${props => props.theme.gray};
+
+    @media screen and (max-width: 960px) {
+        flex-direction: column;
+    }
+`;
+
+export const MessageInfo = styled.div`
+    padding: 15px 5px;
+    width: 150px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    font-size: 1rem;
+    color: ${props => props.theme.gray};
+    font-family: lato, 'sans-serif';
+`;
+
+
+export const MessageMsg = styled.div`
+    padding: 15px 5px;
+    width: 300px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    font-size: 1rem;
+    color: ${props => props.theme.gray};
+    font-family: lato, 'sans-serif';
+    @media screen and (max-width: 960px) {
+        width: 175px;
+    }
+`;
