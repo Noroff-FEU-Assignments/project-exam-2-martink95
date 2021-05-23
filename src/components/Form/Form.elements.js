@@ -65,7 +65,7 @@ export const LoginFormLogo = styled.h1`
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    color: #000;
+    color: ${props => props.theme.purple};
 `;
 
 export const LoginFormLogoSpan = styled.span`

@@ -19,7 +19,7 @@ import { Button } from "../shared/Button/Button.elements";
 export default function AddHotelSection() {
     const { register, handleSubmit, formState: {errors}} = useForm();
     const onSubmit = async data => {
-        await sendMessage(data.hotelName, data.subject, data.email, data.message);
+        await sendMessage(data.hotelName, data.hotelAddress, data.hotelImg, data.hotelPrice, data.hotelDescription);
     }
 
     return(
@@ -58,18 +58,18 @@ export default function AddHotelSection() {
                     })} placeholder="Hotel price" name="hotelPrice" type="number"/>
                     {errors.hotelPrice && <span role="alert" className="alert">{errors.hotelPrice.message}</span>}
 
-                    <InputMessage {...register("description", {
+                    <InputMessage {...register("hotelDescription", {
                         required: true,
                         minLength: {
                             value: 8,
                             message: "Description is too short"
                         }
-                    })} placeholder="Description" name="description" type="text"/>
-                    {errors.description && <span role="alert" className="alert">{errors.description.message}</span>}
+                    })} placeholder="Description" name="hotelDescription" type="text"/>
+                    {errors.hotelDescription && <span role="alert" className="alert">{errors.hotelDescription.message}</span>}
 
 
                     <ContactButtonContainer>
-                        <Button>Send</Button>
+                        <Button>Add hotel</Button>
                     </ContactButtonContainer>
                 </ContactFormContainer>
             </FlexCentered>
@@ -78,27 +78,33 @@ export default function AddHotelSection() {
 }
 
 
-const sendMessage = async (firstName, subject, email, message) => {
-    const url = `${API_URL}/messages`;
+const sendMessage = async (hotelName, hotelAddress, hotelImg, hotelPrice, hotelDescription) => {
+    const url = `${API_URL}/hotels`;
+    const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
+    const token = userInfo.token;
+
     const data = {
-        name: firstName,
-        subject: subject,
-        email_address: email,
-        message: message
+        hotel_name: hotelName,
+        hotel_address: hotelAddress,
+        hotel_images: hotelImg,
+        hotel_price: hotelPrice,
+        hotel_description: hotelDescription,
     }
 
     console.log(data)
-    
-    const headers = {
-        "Content-Type": "application/json"
+    if(userInfo.user.role.type === "admin") {
+        axios.post(url, data, {
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            }
+        }).then(res => {
+            if(res.data) {
+                console.log(res.data)
+                console.log("hotel added sent")
+            }
+        })
+        .catch(err => console.log(err));
     }
-
-    axios.post(url, data, headers).then(res => {
-        if(res.data) {
-            console.log(res.data)
-            console.log("message sent")
-        }
-    })
-    .catch(err => console.log(err));
+    
 
 }
