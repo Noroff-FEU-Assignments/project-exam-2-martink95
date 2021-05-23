@@ -14,7 +14,7 @@ const getUserType = () => {
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
     let userType = ""
     if(userInfo) {
-        userType = userInfo.user_type;
+        userType = userInfo.user.role.type;
         console.log(userType);
         if(userType === "admin") {
             return <Admin />;
@@ -24,5 +24,4 @@ const getUserType = () => {
     } else {
         window.location.replace("/login");
     }
- 
 }

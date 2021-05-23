@@ -41,16 +41,16 @@ const Navbar = () => {
                         <NavItems onClick={handleClick} click={click}>
                             <NavLink to="/">
                                 Home
-                </NavLink>
+                            </NavLink>
                             <NavLink to="/about">
                                 About
-                </NavLink>
+                            </NavLink>
                             <NavLink to="/hotels">
                                 Hotels
-                </NavLink>
+                            </NavLink>
                             <NavLink to="/contact">
                                 Contact us
-                </NavLink>
+                            </NavLink>
                             {isLoggedIn(loginStatus)}
                         </NavItems>
                     </NavbarContainer>

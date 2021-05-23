@@ -86,7 +86,7 @@ const cancelBooking = (btn) => {
 
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
     const token = userInfo.token;
-    const userType = userInfo.user_type;
+    const userType = userInfo.user.role.type;
     
     if(confirmed) {
         if(userType === "admin") {

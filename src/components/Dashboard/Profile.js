@@ -12,15 +12,18 @@ import {
 
 
 import { SignOutDashboardButton, LinkButton, RedButton } from "../shared/Button/Button.elements"
+import { FaShoppingCart } from "react-icons/fa";
+import { IconContext } from "react-icons/lib";
 
 export default function Profile() {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
+    console.log(userInfo)
     const token = userInfo.token;
 
     useEffect(() => {
-        axios.get(`${API_URL}/bookings/?user.id=${userInfo.user_id}`, {
+        axios.get(`${API_URL}/bookings/?user.id=${userInfo.user.id}`, {
             headers: {
                 "Authorization": `Bearer ${token}`,
             }
@@ -38,9 +41,17 @@ export default function Profile() {
         return (
             <>
             <DashboardNavContainer>
-                <DashboardHeading>My bookings</DashboardHeading>
+                <DashboardHeading>My bookings</DashboardHeading> 
                 <SignOutDashboardButton onClick={logOut}>Sign out</SignOutDashboardButton>
             </DashboardNavContainer>
+            <DashboardContainer>
+            <IconContext.Provider value={{ color: "#272755" }}>
+                <a href="/booking">
+                    <FaShoppingCart size={24} style={{ margin: "15px 0 0 0" }}/>
+                </a>
+            </IconContext.Provider>
+            </DashboardContainer>
+            
             <div className="dashboard-container">
                 {generateBookings(bookings)}
             </div>
@@ -50,7 +61,7 @@ export default function Profile() {
         return (
             <>
             <DashboardNavContainer>
-                <DashboardHeading>My bookings</DashboardHeading>
+                <DashboardHeading>My bookings</DashboardHeading>     
                 <SignOutDashboardButton onClick={logOut}>Sign out</SignOutDashboardButton>
             </DashboardNavContainer>
             <div className="dashboard-container">

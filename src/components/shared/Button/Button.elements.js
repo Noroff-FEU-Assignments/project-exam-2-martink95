@@ -47,6 +47,10 @@ export const CardButton = styled(Button)`
     border-radius: 0px;
     padding: 10px 15px;
 `
+export const BookButton = styled(Button)`
+    width: 125px;
+`;
+
 export const LinkButton = styled(Link)`
     background-color: ${props => props.theme.blue};
     text-decoration: none;

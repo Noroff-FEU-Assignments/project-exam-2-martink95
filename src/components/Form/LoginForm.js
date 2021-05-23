@@ -73,15 +73,13 @@ const login = async (email, password) => {
     
     axios.post(url, data, headers).then(res => {
         console.log(res.data)
-        let holidazeData = {
+        const userData = {
             token: res.data.jwt,
-            user_id: res.data.user.id,
-            user_email: res.data.user.email,
-            user_type: res.data.user.role.type
+            user: res.data.user
         }
         if(res.data) {
             console.log("successful login")
-            localStorage.setItem("holidaze_data", JSON.stringify(holidazeData));
+            localStorage.setItem("holidaze_data", JSON.stringify(userData));
             if(localStorage.getItem("holidaze_data")) {
                 window.location.replace("/dashboard");
             }

@@ -11,7 +11,7 @@ export default function Messages() {
 
 const getUserType = () => {
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
-    const userType = userInfo.user_type;
+    const userType = userInfo.user.role.type;
     console.log(userType);
 
     if(userType === "admin") {

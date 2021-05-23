@@ -22,3 +22,68 @@
 .dashboard-container {
   min-height: calc(100vh - 475px);
 }
+
+.booking-container {
+  min-height: calc(100vh - 375px);
+}
+
+.search-item {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+}
+
+.header-search-output {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    background-color: #fff;
+    width: 415px;
+    height: 80px;
+    margin: 0.15rem auto;
+    
+    position: relative;
+    z-index: 500;
+}
+
+.header-search-output:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.55);
+  border: 2px solid #2574FF;
+}
+
+.header-search__output:active {
+  box-shadow: 2px 2px 4px inset rgba(0,0,0,0.55);
+  border: 1px solid #fff;
+}
+
+.header-search-img {
+    height: 100%;
+    width: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.header-search-grid {
+  padding-top: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.header-search__name {
+    font-size: 1.15rem;
+    font-family: paralucent, lato, sans-serif;
+    font-weight: 700;
+    color: #272755;
+}
+
+.header-search__address {
+    font-size: 1rem;
+    width: 300px; 
+    font-family: lato, sans-serif;
+    color: #848499;
+}

@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Messages from "./pages/Dashboard/Messages"
 import Details from "./pages/Details/Details";
+import Booking from "./pages/Booking/Booking";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/dashboard/messages" exact component={Messages} />
+        <Route path="/booking" exact component={Booking} />
       </Switch>
       <Footer />
     </Router>

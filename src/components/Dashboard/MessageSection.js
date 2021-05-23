@@ -15,19 +15,19 @@ export default function MessageSection() {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(true);
     const userInfo = JSON.parse(localStorage.getItem("holidaze_data"));
-    const token = userInfo.token;
+    
 
     useEffect(() => {
         axios.get(`${API_URL}/messages`, {
             headers: {
-                "Authorization": `Bearer ${token}`,
+                "Authorization": `Bearer ${userInfo.token}`,
             }
         })
         .then(res => {
             setMessages(res.data);
             setLoading(false);
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(`error: ${err}`))
     }, []);
 
     if(!loading) {
@@ -54,7 +54,7 @@ export default function MessageSection() {
 }
 
 const generateMessages = (messages) => {
-    console.log(messages)
+    console.log("messages: " + messages)
 
     const messageList = messages.map(message => 
             <MessageContainerGrid key={message.id}>
