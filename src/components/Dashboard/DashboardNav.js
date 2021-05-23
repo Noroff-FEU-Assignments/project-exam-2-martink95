@@ -14,6 +14,7 @@ export default function DashboardNav() {
                 <DashboardNavLinkContainer>
                     <DashboardNavLink to="/dashboard" activeStyle={{ color: "#049f34" }}>Bookings</DashboardNavLink>
                     <DashboardNavLink to="/dashboard/messages">Messages</DashboardNavLink>
+                    <DashboardNavLink to="/dashboard/addhotel">Add hotel</DashboardNavLink>
                 </DashboardNavLinkContainer>
                 <SignOutDashboardButton onClick={logOut}>Sign out</SignOutDashboardButton>
             </DashboardNavContainer>

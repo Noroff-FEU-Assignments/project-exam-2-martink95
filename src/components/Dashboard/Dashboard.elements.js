@@ -34,7 +34,6 @@ export const DashboardNavLink = styled(Link)`
     
     &:hover {
         color: ${props => props.theme.blue};
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.20);
     }
     
 `;

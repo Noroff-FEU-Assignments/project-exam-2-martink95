@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Messages from "./pages/Dashboard/Messages"
 import Details from "./pages/Details/Details";
 import Booking from "./pages/Booking/Booking";
+import AddHotel from './pages/Dashboard/AddHotel';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/dashboard/messages" exact component={Messages} />
+        <Route path="/dashboard/addhotel" exact component={AddHotel} />
         <Route path="/booking" exact component={Booking} />
       </Switch>
       <Footer />
