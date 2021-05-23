@@ -13,7 +13,9 @@ export const ContactFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    @media screen and (max-width: 1130px) {
+        margin-right: 0;
+    }
 `;
 
 export const LoginButtonContainer = styled.div`
